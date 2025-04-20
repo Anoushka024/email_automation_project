@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Automated Emails</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px; /* Added padding for mobile responsiveness */
+            box-sizing: border-box; /* Ensures padding is included in height/width calculations */
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Sets a maximum width for larger screens */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in width calculations */
+        }
+        /* Added margin on the right side for the input boxes */
+        input[type="email"], input[type="text"] {
+            margin-right: 10px; /* Adds a right margin */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Send Automated Emails</h2>
+        <form action="/send-email" method="POST">
+            <input type="email" name="recipients" placeholder="name@example.com" required>
+            <input type="text" name="subject" placeholder="Enter subject" required>
+            <textarea name="email_content" placeholder="Enter email content..." rows="4" required></textarea>
+            <select name="frequency" required>
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+            <button type="submit">Create Automation</button>
+        </form>
+    </div>
+
+</body>
+</html>
